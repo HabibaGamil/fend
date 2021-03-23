@@ -12,7 +12,7 @@
 
             <label>Please enter URL:</label>
             <input id="url" type="text" name="url" placeholder="Enter URL">     
-            <input type="submit" name="" value="submit" onclick="return Client.nlpAnalysis(event)" onsubmit="return Client.nlpAnalysis(event)"> 
+            <input  id="submit" type="submit" name="" value="submit" onclick="return Client.nlpAnalysis(event)" onsubmit="return Client.nlpAnalysis(event)"> 
            
  
         </form>
@@ -26,6 +26,16 @@
         <h3 id="irony"></h3>
 
     </section>
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+       </script>
    
 
 

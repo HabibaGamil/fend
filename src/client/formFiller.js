@@ -1,5 +1,5 @@
 
-const nlpAnalysis = async ( event)=>{
+const nlpAnalysis = async (event)=>{
     event.preventDefault()
     let  url = '/getAnalysis'
     
@@ -15,7 +15,7 @@ const nlpAnalysis = async ( event)=>{
 
   }).then(response => response.json())
 
-    .then(function(response){
+    .then(function callBack (response){
        
         console.log("I was here!")
         Client.showAnalysis(response)
@@ -26,11 +26,23 @@ const nlpAnalysis = async ( event)=>{
 
 function showAnalysis(response){
 
-    document.getElementById("model").innerHTML=response.model+ "hello";
-    document.getElementById("confidence").innerHTML=response.confidence;
-    document.getElementById("agreement").innerHTML=response.agreement;
-    document.getElementById("subjectivity").innerHTML=response.subjectivity;
-    document.getElementById("irony").innerHTML=response.irony;
+    if(response.model!=undefined){//validate url
+
+    document.getElementById("model").innerHTML= "Model: "+response.model;
+    document.getElementById("confidence").innerHTML="Confidence: " +response.confidence;
+    document.getElementById("agreement").innerHTML="Agreement: "+response.agreement;
+    document.getElementById("subjectivity").innerHTML="Subjectivity: "+response.subjectivity;
+    document.getElementById("irony").innerHTML="Irony: "+response.irony;
+    }
+
+    else{
+        document.getElementById("model").innerHTML="Invalid URL";
+        document.getElementById("confidence").innerHTML="";
+        document.getElementById("agreement").innerHTML="";
+        document.getElementById("subjectivity").innerHTML="";
+        document.getElementById("irony").innerHTML="";
+
+    }
 
 }
 export {showAnalysis}

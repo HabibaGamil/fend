@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
   }));
 app.use(bodyParser.json());
 
-const API='https://api.meaningcloud.com/sentiment-2.1?key=977527d984567da19009d91c74ed90dd&&url=';
+
 
 //--------------------------------------------------------------------------------
 //TEST CODE
@@ -40,7 +40,7 @@ yargs.command({
     },
     handler(argv){
         console.log(argv.url)
-        getData(argv.url)
+        getData(argv.url)//removed test function
     }
 })
 yargs.parse();
@@ -58,7 +58,7 @@ app.get('/', function (req, res) {
 
 app.post('/getAnalysis', async (req, res)=> {
 
-    //console.log(req.body.url)//works fine 
+    //console.log(req.body.url)//
 
     console.log(process.env.API_KEY+req.body.url+"&&lang=en")
     
@@ -86,11 +86,11 @@ app.post('/getAnalysis', async (req, res)=> {
             irony: response.irony,
             flag: flag
         }
-        console.log(analysis)//works fine--brings back the right data
+        console.log(analysis)
        
-        console.log("I got the data!")//works
+        console.log("I got the data!")
 
-        res.json(analysis)//DOESNT WORK!!
+        res.json(analysis)
         
         
 

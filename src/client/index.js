@@ -1,5 +1,6 @@
 import { showAnalysis } from './formFiller'
 import { nlpAnalysis} from './formFiller'
+import css from "./styles.css";
 
 
 
@@ -7,6 +8,7 @@ import { nlpAnalysis} from './formFiller'
 
 export { showAnalysis} 
 export {nlpAnalysis}
+export {css}
 
 
 
