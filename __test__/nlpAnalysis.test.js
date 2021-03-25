@@ -1,11 +1,14 @@
 import "@babel/polyfill";
-import { nlpAnalysis} from "../src/client/formFiller"
 
-describe("Testing the submit functionality", ()=>{
-    
-    test("Testing the nlpAnalysis function",()=>{
+const { nlpAnalysis } = require('../src/client/formFiller');
 
-        expect(nlpAnalysis).toBeDefined();
-        
-    })
-})
+
+it('returns the title of the first album', async () => {
+  
+  const myEvent=new MouseEvent("click", {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  });
+  expect(nlpAnalysis(myEvent)).toBeDefined();
+});

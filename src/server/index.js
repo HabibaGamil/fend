@@ -91,10 +91,7 @@ app.post('/getAnalysis', async (req, res)=> {
         console.log("I got the data!")
 
         res.json(analysis)
-        
-        
-
-      
+          
     })
 }
 catch(error){console.log(error)}
@@ -105,5 +102,5 @@ app.listen(3000, function () {
     console.log('Example app listening on port 3000')
 })
 
-
+module.exports=app;
 //console.log(`Your API key is ${process.env.API_KEY}`);

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="./styles.css">
+    
 </head>
 
 
@@ -13,13 +13,13 @@
             <label id="label">Please enter URL:</label>
             <input id="url" type="text" name="url" placeholder="Enter URL">     
             <input  id="submit" type="submit" name="" value="submit" onclick="return Client.nlpAnalysis(event)" onsubmit="return Client.nlpAnalysis(event)"> 
-            
-            <h3 id="model" class="result"></h3>
-            <h3 id="confidence" class="result"></h3>
-            <h3 id="agreement" class="result"></h3>
-            <h3 id="subjectivity" class="result"></h3>
-            <h3 id="irony" class="result"></h3>
- 
+         <div>
+            <h5 id="model" class="result"></h3>
+            <h5 id="confidence" class="result"></h3>
+            <h5 id="agreement" class="result"></h3>
+            <h5 id="subjectivity" class="result"></h3>
+            <h5 id="irony" class="result"></h3>
+         </div>
         </form>
     </section>
 

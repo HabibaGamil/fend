@@ -1,14 +1,18 @@
 import { showAnalysis } from './formFiller'
 import { nlpAnalysis} from './formFiller'
-import css from "./styles.css";
+import{invalidURL}  from './formFiller'
+import {urlValidator} from './urlValidator'
+import  "./styles.css";
 
 
 
 
+export { showAnalysis,
+         nlpAnalysis,
+         urlValidator,
+         invalidURL
+} 
 
-export { showAnalysis} 
-export {nlpAnalysis}
-export {css}
 
 
 
